@@ -7,7 +7,7 @@ const CountryContainer = () => {
   const [countries, setCountries] = useState([]);
   const [selectedCountry, setSelectedCountry] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { //this calls the func that fetches the countries, as the page renders
     getCountries();
   }, []);
 
@@ -24,7 +24,8 @@ const CountryContainer = () => {
   return (
     <div className="main-container">
         <CountryList countries={countries} onCountryClicked={onCountryClicked}/> 
-        {selectedCountry ? <CountryDetail country={selectedCountry}/> : null}
+        {selectedCountry && <CountryDetail country={selectedCountry}/>} 
+        {/* shorthand conditional */}
     </div>
 );
 };

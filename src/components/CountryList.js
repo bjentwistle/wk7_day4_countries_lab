@@ -9,10 +9,12 @@ const CountryList = ({countries, onCountryClicked}) => {
 
   return (
     <div>
-    <ul>
-      {countryItems}
-    </ul>
-  </div>
+      <select >
+        <option value = {countryItems.country}>
+          {countryItems}
+        </option>
+      </select>
+    </div>
   )
 }
 
